@@ -1,3 +1,11 @@
 {
-"presets": ["react-native"]
+	"presets": [
+		"react-native"
+	],
+	"plugins": [
+		["babel-root-import", {
+			"rootPathSuffix": "app"
+		}],
+		"babel-plugin-transform-object-rest-spread"
+	]
 }
