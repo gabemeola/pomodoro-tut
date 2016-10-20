@@ -11,6 +11,8 @@ import {
 	View
 } from 'react-native';
 
+import { LoginButton } from 'react-native-fbsdk';
+
 export default class Pomodoro extends Component {
 	render() {
 		return (
@@ -18,6 +20,11 @@ export default class Pomodoro extends Component {
 				<Text style={styles.welcome}>
 					Welcome to Pomodoro App!
 				</Text>
+				<LoginButton
+					onLoginFinished={() => ({})}
+				  onLogoutFinished={() => ({})}
+				  defaultAudience='everyone'
+				/>
 			</View>
 		);
 	}

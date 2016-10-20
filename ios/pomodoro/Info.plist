@@ -23,14 +23,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>1375653642474880</string>
+				<string>fb1375653642474880</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
 	<string>1375653642474880</string>
 	<key>FacebookDisplayName</key>
-	<string>Gabe Meola</string>
+	<string>pomodoro-tut</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
