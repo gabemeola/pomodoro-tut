@@ -3,8 +3,13 @@
 		"react-native"
 	],
 	"plugins": [
-		["babel-root-import", {
-			"rootPathSuffix": "app"
+		["module-resolver", {
+			"root": ["./app"],
+			"alias": {
+				"app": "./app",
+				"components": "./app/components",
+				"containers": "./app/containers"
+			}
 		}],
 		"babel-plugin-transform-object-rest-spread"
 	]

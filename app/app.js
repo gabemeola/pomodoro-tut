@@ -1,50 +1,15 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-	StyleSheet,
-	Text,
-	View
-} from 'react-native';
+import { View } from 'react-native';
+import { PomodoroNavigator } from 'containers';
 
-import { LoginButton } from 'react-native-fbsdk';
-
-export default class Pomodoro extends Component {
+class AppContainer extends Component {
 	render() {
 		return (
-			<View style={styles.container}>
-				<Text style={styles.welcome}>
-					Welcome to Pomodoro App!
-				</Text>
-				<LoginButton
-					onLoginFinished={() => ({})}
-				  onLogoutFinished={() => ({})}
-				  defaultAudience='everyone'
-				/>
+			<View style={{flex: 1}}>
+				<PomodoroNavigator />
 			</View>
-		);
+		)
 	}
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
-	},
-	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-	},
-	instructions: {
-		textAlign: 'center',
-		color: '#333333',
-		marginBottom: 5,
-	},
-});
+export default AppContainer;
