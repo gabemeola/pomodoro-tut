@@ -4,7 +4,8 @@
 	],
 	"plugins": [
 		["babel-plugin-root-import", {
-			"rootPathSuffix": "app"
+			"rootPathSuffix": "app",
+			"rootPathPrefix": "!"
 		}]
 	]
 }
