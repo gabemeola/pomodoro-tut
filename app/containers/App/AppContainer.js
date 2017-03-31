@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
+import { connect } from 'react-redux';
 import { PomodoroNavigator } from '!/containers';
 import { PreSplash } from '!/components';
 
-export default class AppContainer extends Component {
+class AppContainer extends Component {
 	static propTypes = {
 		isAuthenticating: PropTypes.bool.isRequired,
 	}
@@ -20,3 +21,11 @@ export default class AppContainer extends Component {
 		)
 	}
 }
+
+const mapStateToProps = ({authentication}) => ({
+	isAuthenticating: authentication.isAuthenticating
+});
+
+export default connect(
+	mapStateToProps
+)(AppContainer)
