@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function FooterTabs(props) {
 	return (
-		<TabBarIOS tintColor={colors.active}>
+		<TabBarIOS tintColor={colors.blue}>
 			<Icon.TabBarItem
 				iconSize={35}
 				iconName="ios-home-outline"
