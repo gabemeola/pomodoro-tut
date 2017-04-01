@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TabBarIOS } from 'react-native';
 
 export default function FooterTabs(props) {
 	return (

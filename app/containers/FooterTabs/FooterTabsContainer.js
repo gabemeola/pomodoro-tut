@@ -2,7 +2,10 @@ import { connect } from 'react-redux';
 import { FooterTabs } from '!/components';
 import { setFooterTab } from '!/redux/modules/activeFooterTab';
 
-const mapStateToProps = ({activeFooterTab}) => ({activeFooterTab});
+const mapStateToProps = ({activeFooterTab}, props) => ({
+	activeFooterTab,
+	...props
+});
 
 // Good Example of Using mapDispatch to Props without using bindActionCreators from redux
 const mapDispatchToProps = (dispatch) => ({
