@@ -1,4 +1,4 @@
-import { getAccessToken, authWithToken } from '!/api/auth';
+import { getAccessToken, authWithToken, updateUser } from '!/api/auth';
 
 const AUTHENTICATING = 'AUTHENTICATING';
 const NOT_AUTHED = 'NOT_AUTHED';
@@ -46,8 +46,16 @@ export function onAuthChange(user) {
 			dispatch(notAuthed())
 		} else {
 			// Else dispatch the users authed uid
-			const { providerData, uid } = user;
-			dispatch(isAuthed(uid));
+			const { uid, displayName, photoURL } = user;
+			// Update the User in Firebase
+			updateUser({
+				uid,
+				displayName,
+				photoURL,
+			}).then(() =>
+				// Set the Auth properties on the redux store
+				dispatch(isAuthed(uid))
+			);
 		}
 	}
 }
