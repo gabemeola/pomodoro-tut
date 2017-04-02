@@ -3,9 +3,13 @@ import { Navigator } from 'react-native';
 import { SplashContainer, FooterTabsContainer } from '!/containers';
 
 export default class PomodoroNavigator extends Component {
+	static propTypes = {
+		isAuthed: PropTypes.bool.isRequired,
+	}
 	renderScene = (route, navigator) => {
-		return <FooterTabsContainer navigator={navigator}/>
-		// return <SplashContainer navigator={navigator}/>
+		return this.props.isAuthed === false
+			? <SplashContainer navigator={navigator}/>
+			: <FooterTabsContainer navigator={navigator}/>
 	}
 	configureScene = (route) => {
 
