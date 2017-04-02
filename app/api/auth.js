@@ -5,8 +5,8 @@ export function getAccessToken() {
 	return AccessToken.getCurrentAccessToken();
 }
 
-export function authWithToken() {
+export function authWithToken(token) {
 	return firebaseAuth.signInWithCredential(
-		facebookProvider.credential(AccessToken)
+		facebookProvider.credential(token)
 	);
 }

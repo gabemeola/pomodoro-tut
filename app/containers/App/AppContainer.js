@@ -3,6 +3,8 @@ import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { PomodoroNavigator } from '!/containers';
 import { PreSplash } from '!/components';
+import { firebaseAuth } from '!/config/constants';
+import { onAuthChange } from '!/redux/modules/authentication';
 
 class AppContainer extends Component {
 	static propTypes = {
@@ -11,6 +13,12 @@ class AppContainer extends Component {
 	}
 	static defaultProps = {
 		isAuthenticating: false,
+	}
+	componentDidMount() {
+		// Listen for when Firebase Authentication Status Changes
+		firebaseAuth.onAuthStateChanged((user) =>
+			this.props.dispatch(onAuthChange(user))
+		);
 	}
 	render() {
 		return(
