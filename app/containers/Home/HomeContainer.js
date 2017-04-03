@@ -8,7 +8,8 @@ class HomeContainer extends Component {
 	}
 	render() {
 		return(
-			<Home/>
+			<Home
+				openDrawer={this.props.openDrawer}/>
 		)
 	}
 }

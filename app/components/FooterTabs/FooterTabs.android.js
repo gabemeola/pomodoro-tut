@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { View, Text, DrawerLayoutAndroid } from 'react-native';
+import { DrawerLayoutAndroid } from 'react-native';
 import { HomeContainer, LeaderboardContainer } from '!/containers';
 import Drawer from './Drawer';
 

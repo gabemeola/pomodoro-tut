@@ -8,7 +8,8 @@ class LeaderboardContainer extends Component {
 	}
 	render() {
 		return(
-			<Leaderboard/>
+			<Leaderboard
+				openDrawer={this.props.openDrawer}/>
 		)
 	}
 }
