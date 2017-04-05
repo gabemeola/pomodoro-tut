@@ -6,9 +6,16 @@ class HomeContainer extends Component {
 		openDrawer: PropTypes.func,
 		navigator: PropTypes.object.isRequired,
 	}
+	handleToSettings = () => {
+		// This is Navigate the App to a new route
+		this.props.navigator.push({
+			settings: true,
+		})
+	}
 	render() {
 		return(
 			<Home
+				handleToSettings={this.handleToSettings}
 				openDrawer={this.props.openDrawer}/>
 		)
 	}

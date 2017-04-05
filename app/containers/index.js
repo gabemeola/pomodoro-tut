@@ -4,3 +4,4 @@ export { default as AppContainer } from './App/AppContainer';
 export { default as FooterTabsContainer } from './FooterTabs/FooterTabsContainer';
 export { default as HomeContainer } from './Home/HomeContainer';
 export { default as LeaderboardContainer } from './Leaderboard/LeaderboardContainer';
+export { default as SettingsContainer } from './Settings/SettingsContainer';

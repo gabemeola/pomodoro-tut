@@ -6,3 +6,4 @@ export { default as Leaderboard } from './Leaderboard/Leaderboard';
 export { default as PomodoroNavbar } from './PomodoroNavbar/PomodoroNavbar';
 export { default as Gear } from './Icons/Gear';
 export { default as Hamburger } from './Icons/Hamburger';
+export { default as Settings } from './Settings/Settings';

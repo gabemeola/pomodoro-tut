@@ -8,7 +8,7 @@ export default function Home(props) {
 			<PomodoroNavbar
 				title="Home"
 				leftButton={Platform.OS === 'android' ? <Hamburger onPress={props.openDrawer}/> : null}
-				rightButton={<Gear onPress={() => console.log('gear pressed')}/>}/>
+				rightButton={<Gear onPress={props.handleToSettings}/>}/>
 			<Text>Home</Text>
 		</View>
 	)
@@ -16,4 +16,5 @@ export default function Home(props) {
 
 Home.propTypes = {
 	openDrawer: PropTypes.func,
+	handleToSettings: PropTypes.func.isRequired,
 };
