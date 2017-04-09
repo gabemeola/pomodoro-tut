@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Settings } from '!/components';
 import { handleUnauth } from '!/redux/modules/authentication';
+import { showFlashNotification } from '!/redux/modules/flashNotification';
 
 class SettingsContainer extends Component {
 	static propTypes = {
@@ -18,10 +19,14 @@ class SettingsContainer extends Component {
 		this.setState({restDuration})
 	}
 	handleTimerComplete = () => {
-		console.log('Done Sliding Timer')
+		this.props.dispatch(showFlashNotification({
+			text: 'Timer Duration Updated!'
+		}))
 	}
 	handleRestComplete = () => {
-		console.log('Done Sliding Rest')
+		this.props.dispatch(showFlashNotification({
+			text: 'Rest Duration Updated!'
+		}))
 	}
 	handleLogout = () => {
 		this.props.dispatch(handleUnauth());
