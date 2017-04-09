@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { Settings } from '!/components';
+import { handleUnauth } from '!/redux/modules/authentication';
 
 class SettingsContainer extends Component {
 	static propTypes = {
@@ -22,7 +24,7 @@ class SettingsContainer extends Component {
 		console.log('Done Sliding Rest')
 	}
 	handleLogout = () => {
-		console.log('Logging Out!')
+		this.props.dispatch(handleUnauth());
 	}
 	render() {
 		return(
@@ -39,4 +41,4 @@ class SettingsContainer extends Component {
 	}
 }
 
-export default SettingsContainer;
+export default connect()(SettingsContainer);

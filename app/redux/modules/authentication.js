@@ -1,8 +1,9 @@
-import { getAccessToken, authWithToken, updateUser } from '!/api/auth';
+import { getAccessToken, authWithToken, updateUser, logout } from '!/api/auth';
 
 const AUTHENTICATING = 'AUTHENTICATING';
 const NOT_AUTHED = 'NOT_AUTHED';
 const IS_AUTHED = 'IS_AUTHED';
+export const LOGGING_OUT = 'LOGGING_OUT';
 
 const initialState = {
 	isAuthed: false,
@@ -26,6 +27,12 @@ function isAuthed(uid) {
 	return {
 		type: IS_AUTHED,
 		uid,
+	}
+}
+
+function loggingOut() {
+	return {
+		type: LOGGING_OUT
 	}
 }
 
@@ -57,6 +64,15 @@ export function onAuthChange(user) {
 				dispatch(isAuthed(uid))
 			);
 		}
+	}
+}
+
+export function handleUnauth() {
+	return function(dispatch) {
+		// Resets App State to reflect Logout
+		dispatch(loggingOut());
+		// Calls IO Logout
+		logout();
 	}
 }
 
