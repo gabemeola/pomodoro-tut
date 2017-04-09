@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { PomodoroNavbar, Close } from '!/components';
-import { colors } from '!/styles';
+import { colors, fontSizes } from '!/styles';
+import Slider from 'react-native-slider';
 
 export default function Settings(props) {
 	return(
@@ -16,6 +17,13 @@ export default function Settings(props) {
 
 Settings.propTypes = {
 	onBack: PropTypes.func.isRequired,
+	onLogout: PropTypes.func.isRequired,
+	onRestComplete: PropTypes.func.isRequired,
+	onTimerComplete: PropTypes.func.isRequired,
+	onRestChange: PropTypes.func.isRequired,
+	onTimerChange: PropTypes.func.isRequired,
+	timerDuration: PropTypes.number.isRequired,
+	restDuration: PropTypes.number.isRequired,
 };
 
 const styles = StyleSheet.create({
