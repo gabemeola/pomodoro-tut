@@ -10,7 +10,37 @@ export default function Settings(props) {
 			<PomodoroNavbar
 				title="Settings"
 				leftButton={<Close onPress={props.onBack}/>}/>
-			<Text>Settings Yo</Text>
+			<View style={styles.sliderContainer}>
+				<Text style={styles.titleText}>Timer Duration</Text>
+				<Text style={styles.valueText}>{props.timerDuration}</Text>
+				<Text style={styles.minutes}>{props.timerDuration === 1 ? 'Minute' : 'Minutes'}</Text>
+				<Slider
+					minimumValue={1}
+					maximumValue={60}
+					step={1}
+					thumbTintColor={colors.border}
+					minimumTrackTintColor={colors.blue}
+					value={props.timerDuration}
+					onValueChange={props.onTimerChange}
+					onSlidingComplete={props.onTimerComplete}/>
+			</View>
+			<View style={styles.sliderContainer}>
+				<Text style={styles.titleText}>Rest Duration</Text>
+				<Text style={styles.valueText}>{props.restDuration}</Text>
+				<Text style={styles.minutes}>{props.restDuration === 1 ? 'Minute' : 'Minutes'}</Text>
+				<Slider
+					minimumValue={1}
+					maximumValue={60}
+					step={1}
+					thumbTintColor={colors.border}
+					minimumTrackTintColor={colors.blue}
+					value={props.restDuration}
+					onValueChange={props.onRestChange}
+					onSlidingComplete={props.onRestComplete}/>
+			</View>
+			<TouchableOpacity onPress={props.onLogout} style={styles.logout}>
+				<Text style={styles.logoutText}>Logout</Text>
+			</TouchableOpacity>
 		</View>
 	)
 }
@@ -31,5 +61,39 @@ const styles = StyleSheet.create({
 		flex: 1,
 		// You need to set the background color to white because by default it is transparent
 		backgroundColor: colors.white,
-	}
+	},
+	sliderContainer: {
+		flex: 1,
+		marginLeft: 20,
+		marginRight: 20,
+		alignItems: 'stretch',
+		justifyContent: 'center',
+	},
+	titleText: {
+		fontSize: 20,
+		color: colors.primary,
+		textAlign: 'center',
+	},
+	valueText: {
+		fontSize: 50,
+		color: colors.blue,
+		padding: 15,
+		textAlign: 'center',
+	},
+	minutes: {
+		color: colors.secondary,
+		textAlign: 'center',
+	},
+	logout: {
+		backgroundColor: colors.blue,
+		alignItems: 'stretch',
+		borderRadius: 25,
+		margin: 20,
+		padding: 10,
+	},
+	logoutText: {
+		color: colors.white,
+		fontSize: fontSizes.secondary,
+		textAlign: 'center',
+	},
 });
