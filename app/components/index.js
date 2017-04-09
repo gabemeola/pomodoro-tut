@@ -8,3 +8,4 @@ export { default as Gear } from './Icons/Gear';
 export { default as Hamburger } from './Icons/Hamburger';
 export { default as Close } from './Icons/Close';
 export { default as Settings } from './Settings/Settings';
+export { default as FlashNotification } from './FlashNotification/FlashNotification';
