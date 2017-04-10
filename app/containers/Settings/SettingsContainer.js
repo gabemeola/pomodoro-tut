@@ -7,10 +7,12 @@ import { showFlashNotification } from '!/redux/modules/flashNotification';
 class SettingsContainer extends Component {
 	static propTypes = {
 		navigator: PropTypes.object.isRequired,
+		timerDuration: PropTypes.number,
+		restDuration: PropTypes.number
 	}
 	state = {
-		timerDuration: 20,
-		restDuration: 5,
+		timerDuration: this.props.timerDuration,
+		restDuration: this.props.restDuration,
 	}
 	handleTimerChange = (timerDuration) => {
 		this.setState({timerDuration})
@@ -46,4 +48,11 @@ class SettingsContainer extends Component {
 	}
 }
 
-export default connect()(SettingsContainer);
+const mapStateToProps = ({settings}) => ({
+	timerDuration: settings.timerDuration,
+	restDuration: settings.restDuration,
+});
+
+export default connect(
+	mapStateToProps
+)(SettingsContainer);
