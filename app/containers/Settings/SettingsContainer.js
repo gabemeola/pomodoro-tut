@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Settings } from '!/components';
 import { handleUnauth } from '!/redux/modules/authentication';
+import { addSettingsRestDuration, addSettingsTimerDuration } from '!/redux/modules/settings';
 import { showFlashNotification } from '!/redux/modules/flashNotification';
 
 class SettingsContainer extends Component {
@@ -21,11 +22,13 @@ class SettingsContainer extends Component {
 		this.setState({restDuration})
 	}
 	handleTimerComplete = () => {
+		this.props.dispatch(addSettingsTimerDuration(this.state.timerDuration));
 		this.props.dispatch(showFlashNotification({
 			text: 'Timer Duration Updated!'
 		}))
 	}
 	handleRestComplete = () => {
+		this.props.dispatch(addSettingsRestDuration(this.state.restDuration));
 		this.props.dispatch(showFlashNotification({
 			text: 'Rest Duration Updated!'
 		}))
