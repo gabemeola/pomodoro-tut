@@ -8,14 +8,14 @@ const initialState = {
 	restDuration: 5,
 };
 
-function addSettingsTimerDuration(duration) {
+export function addSettingsTimerDuration(duration) {
 	return {
 		type: ADD_SETTINGS_TIMER_DURATION,
 		duration,
 	}
 }
 
-function addSettingsRestDuration(duration) {
+export function addSettingsRestDuration(duration) {
 	return {
 		type: ADD_SETTINGS_REST_DURATION,
 		duration,
